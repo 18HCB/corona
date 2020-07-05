@@ -1,0 +1,148 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Covid-19</string>
+
+    <!--    GLOBAL STRING ASSET-->
+    <string name="null_text" translatable="false">null</string>
+    <string name="loading_text" tools:ignore="TypographyEllipsis">Memuat...</string>
+
+    <!--    WEB VIEW STRING ASSET-->
+    <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Laman sedang dimuat...</string>
+
+    <!--    BOTTOM SHEET DONATE REDIRECT ASSET-->
+    <string name="donate_desc">Bantu mereka yang terdampak pandemi COVID-19 dengan berdonasi melalui platform kitabisa.com</string>
+    <string name="donate_footer1">Segala hak diserahkan penuh kepada kitabisa.com</string>
+    <string name="donate_footer2" translatable="false">© kitabisa.com</string>
+
+    <!--    BOTTOM SHEET PRIXA REDIRECT ASSET-->
+    <string name="prixa_title">Anda akan dialihkan ke</string>
+    <string name="prixa_desc">Sistem kecerdasan buatan yang Prixa.ai sediakan akan mendeteksi gejala covid-19 yang mungkin kamu alami.</string>
+    <string name="prixa_footer1">Segala hak diserahkan penuh kepada Prixa.ai</string>
+    <string name="prixa_footer2" translatable="false">© prixa.ai</string>
+
+    <!--    FRAGMENT HOME STRING ASSET-->
+    <string name="home_country_ina" translatable="false">INA</string>
+    <string name="home_header">Apakah kamu merasa sakit?</string>
+    <string name="home_desc">Jika kamu merasa sakit dengan gejala covid-19, segera hubungi layanan darurat agar segera ditangani.</string>
+    <string name="home_call">Telepon</string>
+    <string name="home_website" translatable="false">Website</string>
+    <string name="home_news_header">Berita</string>
+    <string name="home_global_data">Data Global</string>
+    <string name="home_confirmed">Terkonfirmasi</string>
+    <string name="home_death">Meninggal</string>
+    <string name="home_recovered">Sembuh</string>
+    <string name="home_preventive_header">Pencegahan</string>
+    <string name="home_preventive1">Jaga Jarak Sosial</string>
+    <string name="home_preventive2">Sering Cuci Tangan</string>
+    <string name="home_preventive3">Pakailah Masker</string>
+    <string name="home_donate_header">Donasi sekarang!</string>
+    <string name="home_donate_desc">Ulurkan tanganmu untuk mereka yang terdampak oleh pandemi ini</string>
+    <string name="home_test_header">Tes sekarang!</string>
+    <string name="home_test_desc">Ikuti langkah-langkah sesuai dengan instruksi</string>
+
+    <!--    FRAGMENT INFO STRING ASSET-->
+    <string name="info_title">Informasi</string>
+    <string name="info_desc" translatable="false">Versi 1.1 © Covid-19 App 2020</string>
+    <string name="info_desc2">Dikembangkan oleh</string>
+    <string name="info_contact_me" translatable="false">Contact Me</string>
+    <string name="info_ayub_dev" translatable="false">ayub.dev</string>
+    <string name="info_acknowledgement">Ucapan Terima Kasih</string>
+    <string name="info_ack1">Data informasi oleh data.covid19.go.id</string>
+    <string name="info_ack2">Desain UI oleh simantOo untuk Nickelfox (free use)</string>
+    <string name="info_ack3">Desain gambar ilustrasi oleh freepik.com (free use)</string>
+    <string name="info_ack4">Data berita oleh newsapi.org</string>
+    <string name="info_ack5">Tes kesehatan dengan kecerdasan buatan oleh prixa.ai</string>
+    <string name="info_ack6">Penyaluran donasi oleh kitabisa.com</string>
+    <string name="info_ack7">Data global COVID-19 oleh covid19.mathdro.id</string>
+    <string name="info_ack8">Animasi petugas medis oleh Paulo Bañas dari lottiefiles.com</string>
+    <string name="info_term">Pengunaan</string>
+    <string name="info_lang_title">Bahasa</string>
+
+    <!--    FRAGMENT MAPS STRING ASSET-->
+    <string name="maps_title">Kasus Per Provinsi</string>
+
+    <!--    FRAGMENT STATS STRING ASSET -->
+    <string name="stat_title">Statistik</string>
+    <string name="stat_subtitle">Total Kasus Hingga Hari Ini</string>
+    <string name="stat_positive">Positif</string>
+    <string name="stat_death">Meninggal</string>
+    <string name="stat_cured">Sembuh</string>
+    <string name="stat_monitoring">ODP</string>
+    <string name="stat_patient">PDP</string>
+    <string name="stat_cumulative_cases">Kasus Kumulatif</string>
+    <string name="stat_updated_cases">Penambahan Kasus</string>
+    <string name="stat_condition_positive_cases">Kondisi Penyerta Positif</string>
+    <string name="stat_positive_symptom_cases">Gejala Positif</string>
+    <string name="stat_age_group_cases">Kelompok Umur</string>
+    <string name="stat_sex_group_cases">Jenis Kelamin</string>
+
+    <!--    INFO WINDOW PROV STRING ASSET-->
+    <string name="info_window_prov_cases">"Kasus: "</string>
+    <string name="info_window_prov_death">"Meninggal: "</string>
+    <string name="info_window_prov_cured">"Sembuh: "</string>
+    <string name="info_window_prov_treated">"Dirawat: "</string>
+    <string name="info_window_prov_subtitle">Dari seluruh kasus di Indonesia</string>
+    <string name="info_window_prov_subtitle2">Data Kasus Berdasarkan:</string>
+    <string name="info_window_prov_sex">Jenis Kelamin:</string>
+    <string name="info_window_prov_age">Umur:</string>
+
+    <!--    PROVINCE LAYOUT STRING ASSET-->
+    <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Cari provinsi ...</string>
+
+    <!--    PREVENTIVE STRING ASSET-->
+    <string name="about">
+        Aplikasi ini tidak ditujukan kepada siapapun yang menjadikan aplikasi ini sebagai patokan terhadap
+        informasi covid-19 walaupun segala informasi di aplikasi ini diunduh dari situs resmi covid-19 pemerintah
+        Indonesia (covid19.go.id). Namun aplikasi ini ditujukan kepada para penggiat software developer guna menggali
+        potensinya dalam mengembangkan sebuah aplikasi yang dalam hal ini adalah ditujukan guna portofolio pribadi.
+        Apabila pengguna merasa dirugikan ketika menggunakan aplikasi ini, segala tanggung jawab penuh diserahkan kepada
+        pengguna. Namun apabila pengguna merasa diuntungkan, kiranya pengguna dapat memberikan umpan balik positif terhadap
+        saya secara pribadi melalui kontak yang disediakan. Surakarta, 2020
+    </string>
+    <string name="social_distancing">
+        Dengan social distancing, maka risiko tertular dari COVID-19 dari orang lain akan berkurang. Sebaliknya, jika kamu ternyata
+        terinfeksi tapi tidak menyadarinya, maka menjauhkan diri dari keramaian akan sangat membantu mencegah penyebaran.\n\n
+        Jadi, jika seseorang yang terinfeksi virus ini kemudian tidak sengaja batuk atau bersin tanpa menutup mulutnya,
+        maka droplet akan jatuh pada permukaan yang ada di dekatnya. Saat ada orang lain yang tidak terinfeksi memegang
+        permukaan tersebut, lalu menyentuh mulut, hidung atau matanya tanpa mencuci tangan terlebih dahulu, maka ia berisiko
+        tinggi ikut tertular.\n\nInilah yang membuat angka penularan penyakit ini naik drastis dalam waktu singkat.
+        Banyak orang yang tidak sadar bahwa dirinya terinfeksi, lalu pergi ke berbagai lokasi untuk memenui teman
+        dan kerabatnya. Akibatnya, penyebaran virus ini semakin luas.
+    </string>
+    <string name="social_distancing_citation">
+        Sumber: https://lifestyle.kompas.com/read/2020/03/16/143303720/social-distancing-efektif-cegah-penyebaran-corona-bagaimana-caranya?page=all
+    </string>
+
+    <string name="wash_hand">
+        Organisasi Kesehatan Dunia (World Health Organization/WHO) menyarankan setiap orang untuk selalu mencuci tangan
+        demi mencegah penyebaran virus corona COVID-19. Bersihkan tangan secara teratur dan menyeluruh dengan sabun
+        dan air atau cairan berbasis alkohol.\n\nMencuci tangan dengan sabun dan air atau menggunakan cairan pembersih
+        berbasis alkohol bisa membunuh virus yang mungkin ada di tangan Anda. Mencuci tangan dapat membuat Anda
+        tetap sehat dan mencegah penyebaran infeksi pernapasan dan diare dari satu orang ke orang lain.\n\nKuman dapat
+        menyebar dari orang lain atau permukaan saat Anda:\n1. Menyentuh mata, hidung, dan mulut Anda dengan tangan yang
+        tidak dicuci.\n2. Makan atau menyiapkan makanan dan minuman dengan tangan yang tidak dicuci.\n3. Menyentuh permukaan
+        atau benda yang terkontaminasi.\n4. Mengesang, batuk, atau bersin ke tangan dan kemudian menyentuh tangan
+        orang lain atau benda-benda.
+    </string>
+    <string name="wash_hand_citation">
+        Sumber: https://tirto.id/cara-cuci-tangan-dengan-7-langkah-menurut-who-untuk-cegah-corona-eLyQ
+    </string>
+
+    <string name="wear_mask">
+        Penelitian dari University of Hong Kong dan University of Maryland menemukan bahwa masker
+        sederhana menghalangi 100 persen tetesan dan aerosol. The Guardian menuliskan, negara-negara yang
+        telah mewajibkan penggunaan masker sejak awal menunjukkan tingkat kematian yang lebih rendah daripada
+        negara-negara yang tidak memberlakukannya.\n\nNamun, tantangan besarnya adalah penggunaan masker hanya
+        akan bekerja jika sebagian besar orang menggunakannya. Analisis dari Food and Drug Administration (FDA)
+        tentang flu memperkirakan, jika 50 persen populasi menggunakan masker, penularan virus dapat dikurangi
+        sebanyak setengahnya. Sementara, jika 80 persen populasi menggunakan masker, virus dapat hilang.\n\nOleh karena
+        itu, berbagai wilayah saat ini mengadopsi hukum yang mewajibkan penggunaan masker di tempat ramai
+        seperti transportasi umum dan toko.
+    </string>
+    <string name="wear_mask_citation">
+        Sumber: https://www.kompas.com/tren/read/2020/04/08/073100465/pandemi-virus-corona-dan-alasan-kenapa-kini-kita-semua-harus-pakai-masker-?page=all#page4
+    </string>
+    <string name="menu_home">Beranda</string>
+    <string name="menu_stats">Statistik</string>
+    <string name="menu_maps">Peta</string>
+    <string name="menu_info">Informasi</string>
+</resources>

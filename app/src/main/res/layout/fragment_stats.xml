@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.nirhart.parallaxscroll.views.ParallaxScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:parallax_factor="1.5">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/stat_title"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="@string/stat_subtitle"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/stat_updated_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="@string/loading_text"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_box_shimmer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <include layout="@layout/placeholder_stats"/>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                </RelativeLayout>
+
+                <TableLayout
+                    android:id="@+id/stat_box_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_stats"
+                            android:backgroundTint="@color/themeOrange"
+                            android:orientation="vertical"
+                            tools:targetApi="lollipop">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/stat_positive"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/stat_added_pos"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginRight="10dp"
+                                    android:gravity="end"
+                                    android:text="@string/null_text"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/stat_kasus_aktif"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/null_text"
+                                android:textColor="#FFFFFF"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_stats"
+                            android:backgroundTint="@color/themeRed"
+                            android:orientation="vertical"
+                            tools:targetApi="lollipop">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/stat_death"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/stat_added_men"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginRight="10dp"
+                                    android:gravity="right"
+                                    android:text="@string/null_text"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/stat_kasus_meninggal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/null_text"
+                                android:textColor="@color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_stats"
+                            android:backgroundTint="@color/themeGreen"
+                            android:orientation="vertical"
+                            tools:targetApi="lollipop">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/stat_cured"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/stat_added_sem"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginRight="10dp"
+                                    android:gravity="end"
+                                    android:text="@string/null_text"
+                                    android:textColor="@color/white"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="SmallSp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/stat_kasus_sumbuh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/null_text"
+                                android:textColor="@color/white"
+                                android:textSize="23sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_stats"
+                            android:backgroundTint="@color/themeBlue"
+                            android:orientation="vertical"
+                            tools:targetApi="lollipop">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/stat_monitoring"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/stat_kasus_odp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/null_text"
+                                android:textColor="@color/white"
+                                android:textSize="23sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_stats"
+                            android:backgroundTint="@color/themePurple"
+                            android:orientation="vertical"
+                            tools:targetApi="lollipop">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/stat_patient"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/stat_kasus_pdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/null_text"
+                                android:textColor="@color/white"
+                                android:textSize="23sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/rounded_stats_daily"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/stat_cumulative_cases"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_shimmer_cumulative_case_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/stat_cumulative_case_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/stat_updated_cases"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_shimmer_new_case_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/stat_new_case_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/stat_condition_positive_cases"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_condition_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/loading_text"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_shimmer_condition_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/stat_condition_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/stat_positive_symptom_cases"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_symptom_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/loading_text"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_shimmer_symptom_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/stat_symptom_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/stat_age_group_cases"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_age_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/loading_text"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_shimmer_age_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"/>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/stat_age_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/stat_sex_group_cases"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_sex_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/loading_text"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/stat_shimmer_sex_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <include layout="@layout/placeholder_graph"/>
+                            <include layout="@layout/placeholder_graph"
+                                tools:ignore="TooManyViews" />
+                            <include layout="@layout/placeholder_graph"/>
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/stat_sex_graph"
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        tools:ignore="UselessLeaf">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.nirhart.parallaxscroll.views.ParallaxScrollView>
+
+</LinearLayout>
