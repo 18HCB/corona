@@ -1,2 +1,1 @@
-# corona
-Vietnam covid disease information application
+# Corona (Vietnam covid disease information application)
