@@ -18,6 +18,8 @@ git clone https://github.com/18HCB/corona.git
 
 ## Contributor
 
+Branch :
+
 * [thnghia](http://github.com/Nghiatiger102) (Trần Hữu Nghĩa)
 * tchien (Trương Châu Hiền)
 * nmduy (Nguyễn Minh Duy
