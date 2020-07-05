@@ -1,7 +1,11 @@
 # Corona (Vietnam covid disease information application)
+
 [Install](#Install)
+
 [Project info](#Project info)
+
 [Structure](#Structure)
+
 
 ## Install
 
