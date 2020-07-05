@@ -145,4 +145,6 @@
     <string name="menu_stats">Statistik</string>
     <string name="menu_maps">Peta</string>
     <string name="menu_info">Informasi</string>
+
+    <string name="THE_MAPS_API">AIzaSyBVtxmfqerLB3dt6Z6wVL6ycIGAJcsgi-s</string>
 </resources>
