@@ -16,3 +16,11 @@ git clone https://github.com/18HCB/corona.git
 
 ## Structure
 
+## Contributor
+
+* [thnghia](http://github.com/Nghiatiger102) (Trần Hữu Nghĩa)
+* tchien (Trương Châu Hiền)
+* nmduy (Nguyễn Minh Duy
+* ldanh (Lê Đức Anh)
+* hmthanh (Hoàng Minh Thanh)
+* bdkhoa (Bùi Đăng Khoa)
