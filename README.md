@@ -2,7 +2,7 @@
 
 [Install](#Install)
 
-[Project info](#Project_info)
+[Project info](#Project-info)
 
 [Structure](#Structure)
 
