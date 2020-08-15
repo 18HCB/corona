@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.nirhart:ParallaxScroll:dd53d1f9d1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbb84fc7465340caba073b67db876056/jetified-ParallaxScroll-dd53d1f9d1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbb84fc7465340caba073b67db876056/jetified-ParallaxScroll-dd53d1f9d1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbb84fc7465340caba073b67db876056/jetified-ParallaxScroll-dd53d1f9d1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
