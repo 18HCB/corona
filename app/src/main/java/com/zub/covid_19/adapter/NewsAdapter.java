@@ -1,4 +1,4 @@
-package com.vietnam.corona.adapter;
+package com.zub.covid_19.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.vietnam.corona.WebViewActivity;
-import com.vietnam.corona.R;
+import com.zub.covid_19.WebViewActivity;
+import com.zub.covid_19.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.vietnam.corona;
+package com.zub.covid_19;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -39,17 +39,20 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.vietnam.corona.adapter.NewsAdapter;
-import com.vietnam.corona.api.globalData.GlobalData;
-import com.vietnam.corona.api.newsData.NewsData;
-import com.vietnam.corona.ui.BottomSheetDonateDialog;
-import com.vietnam.corona.ui.BottomSheetPreventionDialog;
-import com.vietnam.corona.ui.BottomSheetPrixaDialog;
-import com.vietnam.corona.util.LoadLocale;
-import com.vietnam.corona.util.SetLanguage;
-import com.vietnam.corona.util.SpacesItemDecoration;
-import com.vietnam.corona.vm.GlobalDataViewModel;
-import com.vietnam.corona.vm.NewsDataViewModel;
+import com.zub.covid_19.adapter.NewsAdapter;
+import com.zub.covid_19.api.globalData.GlobalData;
+import com.zub.covid_19.api.newsData.NewsData;
+import com.zub.covid_19.api.newsDataVN.Data;
+import com.zub.covid_19.api.newsDataVN.News;
+import com.zub.covid_19.api.newsDataVN.TopTrueNews;
+import com.zub.covid_19.ui.BottomSheetDonateDialog;
+import com.zub.covid_19.ui.BottomSheetPreventionDialog;
+import com.zub.covid_19.ui.BottomSheetPrixaDialog;
+import com.zub.covid_19.util.LoadLocale;
+import com.zub.covid_19.util.SetLanguage;
+import com.zub.covid_19.util.SpacesItemDecoration;
+import com.zub.covid_19.vm.GlobalDataViewModel;
+import com.zub.covid_19.vm.NewsDataViewModel;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -61,10 +64,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-import static com.vietnam.corona.R.drawable;
-import static com.vietnam.corona.R.id;
-import static com.vietnam.corona.R.layout;
-import static com.vietnam.corona.R.string;
+import static com.zub.covid_19.R.drawable;
+import static com.zub.covid_19.R.id;
+import static com.zub.covid_19.R.layout;
+import static com.zub.covid_19.R.string;
 
 public class HomeFragment extends Fragment {
     private ArrayList<String> mNewsImage = new ArrayList<>();
@@ -257,21 +260,23 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        LiveData<NewsData> newsDataLiveData;
+        LiveData<News> newsDataLiveData;
 
         if (loadLocale.getLocale().equals("en")) {
             newsDataLiveData = newsDataViewModel.getNewsDataEn();
         } else {
-            newsDataLiveData = newsDataViewModel.getNewsData();
+            //newsDataLiveData = newsDataViewModel.getNewsData();
+
+            newsDataLiveData = newsDataViewModel.getNewsDataEn();
         }
 
-        newsDataLiveData.observe(this, new Observer<NewsData>() {
+        newsDataLiveData.observe(this, new Observer<News>() {
             @Override
-            public void onChanged(NewsData newsData) {
-                List<NewsData.Articles> articles = newsData.getArticles();
-                for (NewsData.Articles theArticle : articles) {
+            public void onChanged(News news) {
+                List<TopTrueNews> articles = news.getData().getTopTrueNews();
+                for (TopTrueNews theArticle : articles) {
                     mNewsTitle.add(theArticle.getTitle());
-                    mNewsImage.add(theArticle.getUrltoimage());
+                    mNewsImage.add(theArticle.getPicture());
                     mNewsURL.add(theArticle.getUrl());
                 }
 
@@ -284,6 +289,7 @@ public class HomeFragment extends Fragment {
                 if (mNewsRecyclerView.getOnFlingListener() == null)
                     snapHelper.attachToRecyclerView(mNewsRecyclerView);
             }
+
         });
 
         return view;

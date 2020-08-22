@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Covid-19</string>
+    <string name="app_name">Covid-19 by Nhóm 2</string>
     <string name="loading_text" tools:ignore="TypographyEllipsis">Loading...</string>
     <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Loading the page...</string>
     <string name="prixa_title">You\'ll be redirected to</string>
@@ -9,7 +9,7 @@
     <string name="home_header">Are you felling sick?</string>
     <string name="home_desc">If you feel sick with any of covid-19 symptoms, please call immediately for help.</string>
     <string name="home_call">Call Now</string>
-    <string name="home_news_header">News</string>
+    <string name="home_news_header">News111</string>
     <string name="home_preventive_header">Prevention</string>
     <string name="home_preventive1">Avoid Close Contact</string>
     <string name="home_preventive2">Clean Your Hand Often</string>

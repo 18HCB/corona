@@ -1,4 +1,4 @@
-package com.vietnam.corona.ui;
+package com.zub.covid_19.ui;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -13,8 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.vietnam.corona.R;
-import com.vietnam.corona.WebViewActivity;
+import com.zub.covid_19.R;
+import com.zub.covid_19.WebViewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

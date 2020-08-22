@@ -1,10 +1,10 @@
-package com.vietnam.corona.repo;
+package com.zub.covid_19.repo;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.vietnam.corona.api.globalData.GlobalData;
-import com.vietnam.corona.api.globalData.GlobalDataFetch;
-import com.vietnam.corona.api.globalData.GlobalDataHolder;
+import com.zub.covid_19.api.globalData.GlobalData;
+import com.zub.covid_19.api.globalData.GlobalDataFetch;
+import com.zub.covid_19.api.globalData.GlobalDataHolder;
 
 import org.jetbrains.annotations.NotNull;
 

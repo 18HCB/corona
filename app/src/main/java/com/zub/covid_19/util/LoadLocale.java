@@ -1,4 +1,4 @@
-package com.vietnam.corona.util;
+package com.zub.covid_19.util;
 
 import android.app.Activity;
 import android.content.SharedPreferences;

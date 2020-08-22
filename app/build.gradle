@@ -11,8 +11,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.vietnam.corona"
-        minSdkVersion 16
+        applicationId "com.zub.covid_19"
+        minSdkVersion 28
         targetSdkVersion 28
         versionCode 1
         versionName "1.1"
@@ -74,6 +74,11 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:3.3.1"
+
+
+
 
     // Lottie
     def lottieVersion = '3.4.1'

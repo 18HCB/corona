@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">Covid-19</string>
-
+    <string name="app_name" translatable="false">Covid-19 by E5</string>
+    <string name="THE_MAPS_API" translatable="false">AIzaSyB-dLXymVrTKaqw58googQsXfQUpRpgpQc</string>
     <!--    GLOBAL STRING ASSET-->
-    <string name="null_text" translatable="false">null</string>
+    <string name="null_text" translatable="false">Null</string>
     <string name="loading_text" tools:ignore="TypographyEllipsis">Memuat...</string>
 
     <!--    WEB VIEW STRING ASSET-->

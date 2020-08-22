@@ -1,4 +1,4 @@
-package com.vietnam.corona;
+package com.zub.covid_19;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.vietnam.corona.api.newsData;
+package com.zub.covid_19.api.newsData;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -1,4 +1,4 @@
-package com.vietnam.corona.ui;
+package com.zub.covid_19.ui;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.vietnam.corona.R;
+import com.zub.covid_19.R;
 
 public class BottomSheetMapsDialog extends BottomSheetDialogFragment {
 

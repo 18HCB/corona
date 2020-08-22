@@ -1,11 +1,11 @@
-package com.vietnam.corona.vm;
+package com.zub.covid_19.vm;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.vietnam.corona.api.globalData.GlobalData;
-import com.vietnam.corona.repo.GlobalDataRepository;
+import com.zub.covid_19.api.globalData.GlobalData;
+import com.zub.covid_19.repo.GlobalDataRepository;
 
 public class GlobalDataViewModel extends ViewModel {
 

@@ -1,4 +1,4 @@
-package com.vietnam.corona.api.specData;
+package com.zub.covid_19.api.specData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

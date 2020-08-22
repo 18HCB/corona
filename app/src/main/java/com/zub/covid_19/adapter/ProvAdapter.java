@@ -1,4 +1,4 @@
-package com.vietnam.corona.adapter;
+package com.zub.covid_19.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.vietnam.corona.R;
-import com.vietnam.corona.api.provData.ProvData;
+import com.zub.covid_19.R;
+import com.zub.covid_19.api.provData.ProvData;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

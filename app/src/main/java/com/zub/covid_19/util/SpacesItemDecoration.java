@@ -1,4 +1,4 @@
-package com.vietnam.corona.util;
+package com.zub.covid_19.util;
 
 import android.graphics.Rect;
 import android.view.View;

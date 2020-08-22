@@ -1,14 +1,14 @@
-package com.vietnam.corona.repo;
+package com.zub.covid_19.repo;
 
 import android.app.Activity;
 import android.app.Application;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.vietnam.corona.api.newsData.NewsData;
-import com.vietnam.corona.api.newsData.NewsDataFetch;
-import com.vietnam.corona.api.newsData.NewsDataHolder;
-import com.vietnam.corona.util.LoadLocale;
+import com.zub.covid_19.api.newsData.NewsData;
+import com.zub.covid_19.api.newsData.NewsDataFetch;
+import com.zub.covid_19.api.newsData.NewsDataHolder;
+import com.zub.covid_19.util.LoadLocale;
 
 import retrofit2.Call;
 import retrofit2.Callback;

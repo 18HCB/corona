@@ -1,11 +1,11 @@
-package com.vietnam.corona.vm;
+package com.zub.covid_19.vm;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.vietnam.corona.api.regulerData.RegulerData;
-import com.vietnam.corona.repo.RegulerDataRepository;
+import com.zub.covid_19.api.regulerData.RegulerData;
+import com.zub.covid_19.repo.RegulerDataRepository;
 
 public class RegulerDataViewModel extends ViewModel {
     private MutableLiveData<RegulerData> regulerData;

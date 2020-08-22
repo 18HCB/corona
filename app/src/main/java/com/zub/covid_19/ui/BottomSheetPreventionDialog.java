@@ -1,4 +1,4 @@
-package com.vietnam.corona.ui;
+package com.zub.covid_19.ui;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.vietnam.corona.R;
+import com.zub.covid_19.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

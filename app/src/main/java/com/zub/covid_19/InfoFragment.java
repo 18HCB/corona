@@ -1,4 +1,4 @@
-package com.vietnam.corona;
+package com.zub.covid_19;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.vietnam.corona.util.SetLanguage;
+import com.zub.covid_19.util.SetLanguage;
 
 import java.util.Locale;
 import java.util.Objects;

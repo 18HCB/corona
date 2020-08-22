@@ -1,11 +1,11 @@
-package com.vietnam.corona.vm;
+package com.zub.covid_19.vm;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.vietnam.corona.api.specData.SpecData;
-import com.vietnam.corona.repo.SpecDataRepository;
+import com.zub.covid_19.api.specData.SpecData;
+import com.zub.covid_19.repo.SpecDataRepository;
 
 public class SpecDataViewModel extends ViewModel {
 

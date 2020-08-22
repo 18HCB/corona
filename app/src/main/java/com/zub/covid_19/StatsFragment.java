@@ -1,4 +1,4 @@
-package com.vietnam.corona;
+package com.zub.covid_19;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -32,11 +32,13 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.vietnam.corona.api.regulerData.RegulerData;
-import com.vietnam.corona.api.specData.SpecData;
-import com.vietnam.corona.util.LoadLocale;
-import com.vietnam.corona.vm.RegulerDataViewModel;
-import com.vietnam.corona.vm.SpecDataViewModel;
+import com.zub.covid_19.api.TotalVietNam.DataTotalVietNam;
+import com.zub.covid_19.api.regulerData.RegulerData;
+import com.zub.covid_19.api.specData.SpecData;
+import com.zub.covid_19.util.LoadLocale;
+import com.zub.covid_19.vm.RegulerDataViewModel;
+import com.zub.covid_19.vm.SpecDataViewModel;
+import com.zub.covid_19.vm.TotalVietNamViewModel;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -89,12 +91,38 @@ public class StatsFragment extends Fragment {
         ButterKnife.bind(this, view);
         loadLocale = new LoadLocale(getActivity());
 
+
+        // ========= Total Data VietNam FETCHING
+        TotalVietNamViewModel totalVietNamViewModel;
+        totalVietNamViewModel = ViewModelProviders.of(this).get(TotalVietNamViewModel.class);
+        totalVietNamViewModel.init();
+        totalVietNamViewModel.getLoading().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+
+            }
+        });
+
+        totalVietNamViewModel.getTotalVietNam().observe(this, new Observer<DataTotalVietNam>() {
+            @Override
+            public void onChanged(DataTotalVietNam dataTotalVietNam) {
+                ShowTotalVietNam(dataTotalVietNam);
+            }
+
+
+
+        });
+
         // ========= REGULAR DATA FETCHING
 
         RegulerDataViewModel regulerDataViewModel;
 
+
+
         regulerDataViewModel = ViewModelProviders.of(this).get(RegulerDataViewModel.class);
         regulerDataViewModel.init();
+
+
 
         regulerDataViewModel.getLoading().observe(this, new Observer<Boolean>() {
             @Override
@@ -146,7 +174,12 @@ public class StatsFragment extends Fragment {
             }
         });
 
+
+
+
         return view;
+
+
     }
 
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
@@ -661,11 +694,23 @@ public class StatsFragment extends Fragment {
         lineDataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
     }
 
+    private  void ShowTotalVietNam(DataTotalVietNam dataTotalVietNam)
+    {
+        String confirm = dataTotalVietNam.getData().getTotalVietNam().getConfirmed().replace(".","");
+
+        int mPositif = Integer.parseInt(confirm);
+        int mMeninggal = Integer.parseInt(dataTotalVietNam.getData().getTotalVietNam().getDeaths());
+        int mSembuh = Integer.parseInt(dataTotalVietNam.getData().getTotalVietNam().getRecovered());
+
+        mStatPositiveCases.setText(numberSeparator(mPositif));
+        mStatDeathCases.setText(numberSeparator(mMeninggal));
+        mStatCuredCases.setText(numberSeparator(mSembuh));
+
+    }
+
     private void showRegulerData(RegulerData regulerData) {
 
-        int mPositif = regulerData.getUpdatedData().getTotalCases().getmPositif();
-        int mMeninggal = regulerData.getUpdatedData().getTotalCases().getmMeninggal();
-        int mSembuh = regulerData.getUpdatedData().getTotalCases().getmSembuh();
+
         int mODP = regulerData.getDerivativeData().getmODP();
         int mPDP = regulerData.getDerivativeData().getmPDP();
         int mAddedPos = regulerData.getUpdatedData().getNewCases().getmPositif();
@@ -673,9 +718,7 @@ public class StatsFragment extends Fragment {
         int mAddedSem = regulerData.getUpdatedData().getNewCases().getmSembuh();
         String mUpdate = regulerData.getUpdatedData().getNewCases().getmWaktuUpdate();
 
-        mStatPositiveCases.setText(numberSeparator(mPositif));
-        mStatDeathCases.setText(numberSeparator(mMeninggal));
-        mStatCuredCases.setText(numberSeparator(mSembuh));
+
         mStatMonitoringCases.setText(numberSeparator(mODP));
         mStatPatientCases.setText(numberSeparator(mPDP));
         mStatAddedPositive.setText("+" + numberSeparator(mAddedPos));

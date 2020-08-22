@@ -1,4 +1,4 @@
-package com.vietnam.corona;
+package com.zub.covid_19;
 
 import android.animation.Animator;
 import android.annotation.SuppressLint;
@@ -70,16 +70,24 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-import com.vietnam.corona.adapter.ProvAdapter;
-import com.vietnam.corona.api.provData.ProvData;
-import com.vietnam.corona.ui.BottomSheetMapsDialog;
-import com.vietnam.corona.util.LoadLocale;
-import com.vietnam.corona.vm.ProvDataViewModel;
+import com.zub.covid_19.adapter.ProvAdapter;
+import com.zub.covid_19.adapter.ProvVNAdapter;
+import com.zub.covid_19.api.ProvincesVietNam.DataProvinceVN;
+import com.zub.covid_19.api.ProvincesVietNam.Province;
+import com.zub.covid_19.api.ProvincesVietNam.ProvinceVN;
+import com.zub.covid_19.api.TotalVietNam.DataTotalVietNam;
+import com.zub.covid_19.api.provData.ProvData;
+import com.zub.covid_19.ui.BottomSheetMapsDialog;
+import com.zub.covid_19.util.LoadLocale;
+import com.zub.covid_19.vm.ProvDataVNViewModel;
+import com.zub.covid_19.vm.ProvDataViewModel;
+import com.zub.covid_19.vm.TotalVietNamViewModel;
 
 import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,13 +96,15 @@ import java.util.Objects;
 
 public class MapsFragment extends Fragment implements
         OnMapReadyCallback,
-        ProvAdapter.ListClickedListener {
+        ProvVNAdapter.ListClickedListener {
 
     private ProvAdapter provAdapter;
 
-    private ArrayList<ProvData.ProvListData> provListData = new ArrayList<>();
+    private ProvVNAdapter provVNAdapter;
 
-    private ArrayList<ProvData.ProvListData> filteredList = new ArrayList<>();;
+    private DataProvinceVN provListData = new DataProvinceVN();
+
+    private DataProvinceVN filteredList = new DataProvinceVN();;
 
     private GoogleMap googleMap;
 
@@ -111,12 +121,35 @@ public class MapsFragment extends Fragment implements
     private Marker marker;
 
     private int arraySizeBefore;
-
+    double totalConfirm = 1;
     @SuppressLint("ClickableViewAccessibility")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
+
+        // ========= Total Data VietNam FETCHING
+        TotalVietNamViewModel totalVietNamViewModel;
+        totalVietNamViewModel = ViewModelProviders.of(this).get(TotalVietNamViewModel.class);
+        totalVietNamViewModel.init();
+        totalVietNamViewModel.getLoading().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+
+            }
+        });
+
+        totalVietNamViewModel.getTotalVietNam().observe(this, new Observer<DataTotalVietNam>() {
+            @Override
+            public void onChanged(DataTotalVietNam dataTotalVietNam) {
+                String confirm  =dataTotalVietNam.getData().getTotalVietNam().getConfirmed().replace(".","");
+                totalConfirm = Double.parseDouble(confirm);
+            }
+
+
+
+        });
+
 
         mProvCollectedData = view.findViewById(R.id.prov_collected_data);
 
@@ -141,12 +174,21 @@ public class MapsFragment extends Fragment implements
 
             @Override
             public boolean onQueryTextChange(String s) {
-                if (!provListData.isEmpty()) {
+                if (!provListData.getProvinces().isEmpty()) {
                     filter(s);
                 }
                 return false;
             }
         });
+
+
+
+
+
+
+
+
+
 
         return view;
     }
@@ -155,32 +197,33 @@ public class MapsFragment extends Fragment implements
 
         arraySizeBefore = markerArrayList.size();
 
-        filteredList.clear();
+        filteredList.getProvinces().clear();
         googleMap.clear();
         marker.remove();
-        for (ProvData.ProvListData theProvData : provListData) {
-            if (theProvData.getProvName().toLowerCase().contains(toString.toLowerCase())) {
-                filteredList.add(theProvData);
-                double lat = theProvData.getProvDataLocation().getLat();
-                double lng = theProvData.getProvDataLocation().getLng();
+        for (Province theProvData : provListData.getProvinces()) {
+            if (theProvData.getProvinceName().toLowerCase().contains(toString.toLowerCase())) {
+                filteredList.getProvinces().add(theProvData);
+                double lat = Double.parseDouble(theProvData.getLat());
+                double lng = Double.parseDouble(theProvData.getLong());
                 MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(lat, lng));
                 marker = googleMap.addMarker(markerOptions);
                 markerArrayList.add(marker);
             }
         }
 
-        provAdapter.filterList(filteredList);
+        provVNAdapter.filterList(filteredList);
     }
 
-    private void setupRecyclerView(RecyclerView mProvRecyclerView, ProvData provData) {
+    private void setupRecyclerView(RecyclerView mProvRecyclerView, ProvinceVN provData) {
 
-        List<ProvData.ProvListData> provListData = provData.getProvListDataLists();
 
-        this.provListData.addAll(provListData);
-        this.filteredList.addAll(provListData);
+        List<Province> provListData = provData.getData().getProvinces();
 
-        provAdapter = new ProvAdapter(this.provListData, this);
-        mProvRecyclerView.setAdapter(provAdapter);
+        this.provListData.getProvinces().addAll(provListData);
+        this.filteredList.getProvinces().addAll(provListData);
+
+        provVNAdapter = new ProvVNAdapter(this.provListData, this);
+        mProvRecyclerView.setAdapter(provVNAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
         mProvRecyclerView.setLayoutManager(linearLayoutManager);
 
@@ -222,9 +265,9 @@ public class MapsFragment extends Fragment implements
 
         this.googleMap = googleMap;
 
-        final double LAT = -8.0675589d;
-        final double LNG = 120.9046018d;
-        final float ZOOM = 3.17f;
+        final double LAT = 	10.762622d;
+        final double LNG = 106.660172d;
+        final float ZOOM = 5f;
 
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(LAT, LNG), ZOOM);
 
@@ -240,9 +283,9 @@ public class MapsFragment extends Fragment implements
 
         //PROV DATA FETCHING
 
-        ProvDataViewModel provDataViewModel;
+        ProvDataVNViewModel provDataViewModel;
 
-        provDataViewModel = ViewModelProviders.of(this).get(ProvDataViewModel.class);
+        provDataViewModel = ViewModelProviders.of(this).get(ProvDataVNViewModel.class);
         provDataViewModel.init();
 
         provDataViewModel.getLoading().observe(this, new Observer<Boolean>() {
@@ -256,18 +299,24 @@ public class MapsFragment extends Fragment implements
             }
         });
 
-        provDataViewModel.getRegulerData().observe(this, new Observer<ProvData>() {
+        provDataViewModel.getRegulerData().observe(this, new Observer<ProvinceVN>() {
             @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
-            public void onChanged(ProvData provData) {
-                List<ProvData.ProvListData> provListData = provData.getProvListDataLists();
-                for (ProvData.ProvListData theProvListData : provListData) {
-                    ProvData.ProvListData.ProvDataLocation provDataLocation = theProvListData.getProvDataLocation();
+            public void onChanged(ProvinceVN provinceVN) {
+
+
+
+                List<Province> provListData = provinceVN.getData().getProvinces();
+
+                for (Province theProvListData : provListData) {
+
                     double lat = -1;
                     double lng = -1;
-                    if (!(provDataLocation == null)) {
-                        lat = provDataLocation.getLat();
-                        lng = provDataLocation.getLng();
+                    if (!(theProvListData.getLat() == null)) {
+                        String Lat = theProvListData.getLat();
+                        String Lng = theProvListData.getLong();
+                        lat = Double.parseDouble(Lat);
+                        lng = Double.parseDouble(Lng);
                     }
                     LatLng latLng = new LatLng(lat, lng);
                     marker = googleMap.addMarker(new MarkerOptions().position(latLng));
@@ -276,28 +325,37 @@ public class MapsFragment extends Fragment implements
 
                 LoadLocale loadLocale = new LoadLocale(getActivity());
 
-                if (loadLocale.getLocale().equals("en")) {
-                    mProvCollectedData.setText("Data collected: " +
-                            String.format("%.1f",provData.getCurrentData()) +
-                            "% on " + provData.getLastUpdate());
-                } else {
-                    mProvCollectedData.setText("Data dihimpun: " +
-                            String.format("%.1f",provData.getCurrentData()) +
-                            "% pada " + provData.getLastUpdate());
-                }
+//                if (loadLocale.getLocale().equals("en")) {
+//                    mProvCollectedData.setText("Data collected: " +
+//                            String.format("%.1f",provData.getCurrentData()) +
+//                            "% on " + provData.getLastUpdate());
+//                } else {
+//                    mProvCollectedData.setText("Data dihimpun: " +
+//                            String.format("%.1f",provData.getCurrentData()) +
+//                            "% pada " + provData.getLastUpdate());
+//                }
+
+//                mProvCollectedData.setText("Data collected: " +
+//                        String.format("%.1f",provData.getCurrentData()) +
+//                        "% on " + provData.getLastUpdate());
 
                 googleMap.setInfoWindowAdapter(new ProvInfoWindowAdapter());
 
-                setupBottomSheet(mProvDetailedCaseButton, provData);
+                setupBottomSheet(mProvDetailedCaseButton, provinceVN);
 
-                setupRecyclerView(mProvRecyclerView, provData);
+                setupRecyclerView(mProvRecyclerView, provinceVN);
             }
+
+
+
+
+
 
         });
 
     }
 
-    private void setupBottomSheet(LinearLayout mProvDetailedCaseButton, ProvData provData) {
+    private void setupBottomSheet(LinearLayout mProvDetailedCaseButton, ProvinceVN provData) {
         Toast mToast = Toast.makeText(getContext(), "", Toast.LENGTH_LONG);
 //        BottomSheetMapsDialog bottomSheetMapsDialog = new BottomSheetMapsDialog();
 
@@ -323,8 +381,8 @@ public class MapsFragment extends Fragment implements
 
         mFilter.clearFocus();
         markerArrayList.get(position + arraySizeBefore).showInfoWindow();
-        double LAT = filteredList.get(position).getProvDataLocation().getLat() + 0.655d;
-        double LNG = filteredList.get(position).getProvDataLocation().getLng();
+        double LAT =  Double.parseDouble(filteredList.getProvinces().get(position).getLat()) + 0.655d;
+        double LNG = Double.parseDouble( filteredList.getProvinces().get(position).getLong());
         final float ZOOM = 7;
 
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(LAT, LNG), ZOOM);
@@ -378,36 +436,45 @@ public class MapsFragment extends Fragment implements
             String id = marker.getId();
             int convId = Integer.parseInt(id.replaceAll("[^\\d.]", "")) - arraySizeBefore;
 
-            ProvData.ProvListData provListData = filteredList.get(convId);
+            Province provListData = filteredList.getProvinces().get(convId);
 
             //HANDLING ERROR CAUSE NULL __ NOT THE EFFECTIVE WAY
             //BECAUSE WE FORCE TO PUT THE FIRST ageList DATA
 
-            ArrayList<Integer> ageList = new ArrayList<>();
+//            ArrayList<Integer> ageList = new ArrayList<>();
+//
+//            for (ProvData.ProvListData.ProvDataAgeList theAgeList : provListData.getProvDataAgeLists()) {
+//                if (provListData.getProvDataAgeLists().size() < 6) {
+//                    if (ageList.size() == 0) {
+//                        ageList.add(0);
+//                    }
+//                }
+//                ageList.add(theAgeList.getDocCount());
+//            }
 
-            for (ProvData.ProvListData.ProvDataAgeList theAgeList : provListData.getProvDataAgeLists()) {
-                if (provListData.getProvDataAgeLists().size() < 6) {
-                    if (ageList.size() == 0) {
-                        ageList.add(0);
-                    }
-                }
-                ageList.add(theAgeList.getDocCount());
-            }
+            mProvName.setText(provListData.getProvinceName());
+            mProvCase.setText(numberSeparator( Integer.parseInt(provListData.getConfirmed())));
+            mProvDeath.setText(numberSeparator(Integer.parseInt(provListData.getDeaths())));
+            mProvCured.setText(numberSeparator(Integer.parseInt(provListData.getRecovered())));
 
-            mProvName.setText(provListData.getProvName());
-            mProvCase.setText(numberSeparator(provListData.getCaseAmount()));
-            mProvDeath.setText(numberSeparator(provListData.getDeathAmount()));
-            mProvCured.setText(numberSeparator(provListData.getHealedAmount()));
-            mProvTreated.setText(numberSeparator(provListData.getTreatedAmount()));
-            mProvPercentage.setText(String.format("%.1f", provListData.getDocCount()));
-            mProvMale.setText(numberSeparator(provListData.getProvDataSexLists().get(0).getDocCount()));
-            mProvFemale.setText(numberSeparator(provListData.getProvDataSexLists().get(1).getDocCount()));
-            mProvBaby.setText(numberSeparator(ageList.get(0)));
-            mProvTeen.setText(numberSeparator(ageList.get(1)));
-            mProvMan.setText(numberSeparator(ageList.get(2)));
-            mProvAdult.setText(numberSeparator(ageList.get(3)));
-            mProvOld.setText(numberSeparator(ageList.get(4)));
-            mProvGrandParents.setText(numberSeparator(ageList.get(5)));
+          //  mProvTreated.setText(numberSeparator(provListData.getTreatedAmount()));
+
+
+
+
+
+            Double percent = Double.parseDouble(provListData.getConfirmed()) * 100.0f / totalConfirm;
+
+            mProvPercentage.setText(percent.toString().substring(0,3));
+//            mProvMale.setText(numberSeparator(provListData.getProvDataSexLists().get(0).getDocCount()));
+//            mProvFemale.setText(numberSeparator(provListData.getProvDataSexLists().get(1).getDocCount()));
+
+//            mProvBaby.setText(numberSeparator(ageList.get(0)));
+//            mProvTeen.setText(numberSeparator(ageList.get(1)));
+//            mProvMan.setText(numberSeparator(ageList.get(2)));
+//            mProvAdult.setText(numberSeparator(ageList.get(3)));
+//            mProvOld.setText(numberSeparator(ageList.get(4)));
+//            mProvGrandParents.setText(numberSeparator(ageList.get(5)));
 
             return view;
         }
@@ -418,5 +485,7 @@ public class MapsFragment extends Fragment implements
         }
 
     }
+
+
 
 }

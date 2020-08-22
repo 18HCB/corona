@@ -1,4 +1,4 @@
-package com.vietnam.corona.api.globalData
+package com.zub.covid_19.api.globalData
 
 import com.google.gson.annotations.SerializedName
 

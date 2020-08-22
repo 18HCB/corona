@@ -1,10 +1,10 @@
-package com.vietnam.corona.repo;
+package com.zub.covid_19.repo;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.vietnam.corona.api.regulerData.RegulerData;
-import com.vietnam.corona.api.regulerData.RegulerDataFetch;
-import com.vietnam.corona.api.regulerData.RegulerDataHolder;
+import com.zub.covid_19.api.regulerData.RegulerData;
+import com.zub.covid_19.api.regulerData.RegulerDataFetch;
+import com.zub.covid_19.api.regulerData.RegulerDataHolder;
 
 import retrofit2.Call;
 import retrofit2.Callback;

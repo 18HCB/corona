@@ -1,4 +1,4 @@
-package com.vietnam.corona.api.newsData;
+package com.zub.covid_19.api.newsData;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

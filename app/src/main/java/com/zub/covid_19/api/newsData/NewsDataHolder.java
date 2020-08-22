@@ -1,9 +1,9 @@
-package com.vietnam.corona.api.newsData;
+package com.zub.covid_19.api.newsData;
 
 import android.content.res.Resources;
 
 import com.bumptech.glide.load.engine.Resource;
-import com.vietnam.corona.R;
+import com.zub.covid_19.R;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
