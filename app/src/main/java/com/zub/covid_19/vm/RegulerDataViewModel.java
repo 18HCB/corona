@@ -4,11 +4,12 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.zub.covid_19.api.regulerData.RegulerData;
+//import com.zub.covid_19.api.regulerData.RegulerData;
+import com.zub.covid_19.api.regulerData.RegulerDataVN;
 import com.zub.covid_19.repo.RegulerDataRepository;
 
 public class RegulerDataViewModel extends ViewModel {
-    private MutableLiveData<RegulerData> regulerData;
+    private MutableLiveData<RegulerDataVN> regulerData;
     private MutableLiveData<Boolean> isLoading;
     private RegulerDataRepository regulerDataRepository;
 
@@ -22,7 +23,7 @@ public class RegulerDataViewModel extends ViewModel {
 
     }
 
-    public LiveData<RegulerData> getRegulerData() {
+    public LiveData<RegulerDataVN> getRegulerData() {
         return regulerData;
     }
 

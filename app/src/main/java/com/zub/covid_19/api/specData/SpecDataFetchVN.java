@@ -3,10 +3,9 @@ package com.zub.covid_19.api.specData;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SpecDataFetch {
-
+public class SpecDataFetchVN {
     private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://data.covid19.go.id/")
+            .baseUrl("http://10.0.2.2:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 

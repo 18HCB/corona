@@ -86,7 +86,7 @@ public class ProvAdapter extends RecyclerView.Adapter<ProvAdapter.ViewHolder> {
             mProvCase = itemView.findViewById(R.id.prov_case);
             mProvDeath = itemView.findViewById(R.id.prov_death);
             mProvHealed = itemView.findViewById(R.id.prov_cured);
-            mProvTreated = itemView.findViewById(R.id.prov_treated);
+           // mProvTreated = itemView.findViewById(R.id.prov_treated);
 
             mListClickedListener = listClickedListener;
 

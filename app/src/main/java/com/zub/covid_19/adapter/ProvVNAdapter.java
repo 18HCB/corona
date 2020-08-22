@@ -46,7 +46,7 @@ public class ProvVNAdapter extends RecyclerView.Adapter<ProvVNAdapter.ViewHolder
         holder.mProvCase.setText(numberSeparator(Integer.parseInt(provListData.getProvinces().get(position).getConfirmed())));
         holder.mProvDeath.setText(numberSeparator(Integer.parseInt(provListData.getProvinces().get(position).getDeaths())));
         holder.mProvHealed.setText(numberSeparator(Integer.parseInt(provListData.getProvinces().get(position).getRecovered())));
-        holder.mProvTreated.setText("0");
+        //holder.mProvTreated.setText("0");
 
         holder.mProvListLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class ProvVNAdapter extends RecyclerView.Adapter<ProvVNAdapter.ViewHolder
             mProvCase = itemView.findViewById(R.id.prov_case);
             mProvDeath = itemView.findViewById(R.id.prov_death);
             mProvHealed = itemView.findViewById(R.id.prov_cured);
-            mProvTreated = itemView.findViewById(R.id.prov_treated);
+           // mProvTreated = itemView.findViewById(R.id.prov_treated);
 
             mListClickedListener = listClickedListener;
 

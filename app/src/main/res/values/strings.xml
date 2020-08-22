@@ -14,6 +14,7 @@
     <string name="donate_footer2" translatable="false">© kitabisa.com</string>
 
     <!--    BOTTOM SHEET PRIXA REDIRECT ASSET-->
+    <string name="URL_API" translatable="false">http://10.0.2.2:8080/</string>
     <string name="prixa_title">Anda akan dialihkan ke</string>
     <string name="prixa_desc">Sistem kecerdasan buatan yang Prixa.ai sediakan akan mendeteksi gejala covid-19 yang mungkin kamu alami.</string>
     <string name="prixa_footer1">Segala hak diserahkan penuh kepada Prixa.ai</string>

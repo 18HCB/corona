@@ -110,25 +110,25 @@
                     android:textColor="@color/gray700"
                     android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:gravity="start"
-                    android:text="@string/info_window_prov_treated"
-                    android:textColor="@color/gray700"
-                    android:textSize="14sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:gravity="start"-->
+<!--                    android:text="@string/info_window_prov_treated"-->
+<!--                    android:textColor="@color/gray700"-->
+<!--                    android:textSize="14sp" />-->
 
-                <TextView
-                    android:id="@+id/prov_treated"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:gravity="start"
-                    android:text="@string/null_text"
-                    android:textColor="@color/gray700"
-                    android:textSize="14sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/prov_treated"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginRight="15dp"-->
+<!--                    android:gravity="start"-->
+<!--                    android:text="@string/null_text"-->
+<!--                    android:textColor="@color/gray700"-->
+<!--                    android:textSize="14sp" />-->
 
             </LinearLayout>
 

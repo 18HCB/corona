@@ -1,8 +1,11 @@
 package com.zub.covid_19.repo;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
-import com.zub.covid_19.api.regulerData.RegulerData;
+//import com.zub.covid_19.api.regulerData.RegulerData;
+import com.zub.covid_19.api.regulerData.RegulerDataVN;
 import com.zub.covid_19.api.regulerData.RegulerDataFetch;
 import com.zub.covid_19.api.regulerData.RegulerDataHolder;
 
@@ -34,6 +37,30 @@ public class RegulerDataRepository {
         return isLoading;
     }
 
+    public MutableLiveData<RegulerDataVN> getRegulerData() {
+        MutableLiveData<RegulerDataVN> regulerData = new MutableLiveData<>();
+        isLoading.setValue(true);
+        regulerDataHolder.getRegulerData().enqueue(new Callback<RegulerDataVN>() {
+            @Override
+            public void onResponse(Call<RegulerDataVN> call, Response<RegulerDataVN> response) {
+                if (response.isSuccessful()){
+                    Log.d("anhld",response.body().getData().getTrendlineVnCases().get(0).getDeaths().toString());
+                    isLoading.setValue(false);
+                    regulerData.setValue(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RegulerDataVN> call, Throwable t) {
+                isLoading.setValue(false);
+                Timber.e(t);
+            }
+        });
+
+        return regulerData;
+
+    }
+    /*
     public MutableLiveData<RegulerData> getRegulerData() {
         MutableLiveData<RegulerData> regulerData = new MutableLiveData<>();
         isLoading.setValue(true);
@@ -56,5 +83,5 @@ public class RegulerDataRepository {
         return regulerData;
 
     }
-
+     */
 }

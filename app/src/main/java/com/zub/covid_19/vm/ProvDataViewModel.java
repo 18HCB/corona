@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.zub.covid_19.api.provData.ProvData;
-import com.zub.covid_19.api.regulerData.RegulerData;
 import com.zub.covid_19.repo.ProvDataRepository;
-import com.zub.covid_19.repo.RegulerDataRepository;
 
 public class ProvDataViewModel extends ViewModel {
     private MutableLiveData<ProvData> provData;

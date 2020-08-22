@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProvincesVNFetch {
 
     public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:8080/")
+            .baseUrl("@string/URL_API")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 

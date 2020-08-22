@@ -43,8 +43,8 @@ public class BottomSheetDonateDialog extends BottomSheetMapsDialog {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("passingURL", "https://kitabisa.com/campaign/indonesialawancorona");
-                intent.putExtra("passingTitle", "KitaBisa.com");
+                intent.putExtra("passingURL", "https://www.unicef.org/vietnam/vi/%C4%91%E1%BB%93ng-h%C3%A0nh-c%C3%B9ng-unicef");
+                intent.putExtra("passingTitle", "Ủng hộ Việt Nam");
                 getActivity().startActivity(intent);
                 dismiss();
             }

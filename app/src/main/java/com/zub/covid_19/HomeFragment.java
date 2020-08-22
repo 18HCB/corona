@@ -86,10 +86,8 @@ public class HomeFragment extends Fragment {
     LinearLayout mWebsiteButton;
     @BindView(id.home_do_test_button)
     RelativeLayout mDoTest;
-    @BindView(id.home_country_button)
-    LinearLayout mCountry;
-    @BindView(id.home_preventive_1)
-    LinearLayout mPreventive1;
+   // @BindView(id.home_country_button) LinearLayout mCountry;
+  //  @BindView(id.home_preventive_1) LinearLayout mPreventive1;
     @BindView(id.home_preventive_2)
     LinearLayout mPreventive2;
     @BindView(id.home_preventive_3)
@@ -129,7 +127,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:119"));
+                intent.setData(Uri.parse("tel:19009095"));
                 startActivity(intent);
             }
         });
@@ -138,8 +136,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("passingURL", "https://covid19.go.id");
-                intent.putExtra("passingTitle", "Portal Resmi Gugus Tugas Covid-19");
+                intent.putExtra("passingURL", "https://moh.gov.vn");
+                intent.putExtra("passingTitle", "Bộ y tế Việt Nam");
                 getContext().startActivity(intent);
             }
         });
@@ -160,30 +158,30 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        mCountry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mToast.setText("Other countries' data coming soon!");
-                mToast.show();
-            }
-        });
+//        mCountry.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mToast.setText("Other countries' data coming soon!");
+//                mToast.show();
+//            }
+//        });
 
-        mPreventive1.setOnClickListener(new View.OnClickListener() {
-            Bundle bundle = new Bundle();
-            Integer passingTitle = string.home_preventive1;
-            Integer passingHeader = drawable.social_distancing_header;
-            Integer passingContent = string.social_distancing;
-            Integer passingCitation = string.social_distancing_citation;
-            @Override
-            public void onClick(View view) {
-                bundle.putInt("passingTitle", passingTitle);
-                bundle.putInt("passingHeader", passingHeader);
-                bundle.putInt("passingContent", passingContent);
-                bundle.putInt("passingCitation", passingCitation);
-                bottomSheetPreventionDialog.setArguments(bundle);
-                bottomSheetPreventionDialog.show(getFragmentManager(), "BottomSheet");
-            }
-        });
+//        mPreventive1.setOnClickListener(new View.OnClickListener() {
+//            Bundle bundle = new Bundle();
+//            Integer passingTitle = string.home_preventive1;
+//            Integer passingHeader = drawable.social_distancing_header;
+//            Integer passingContent = string.social_distancing;
+//            Integer passingCitation = string.social_distancing_citation;
+//            @Override
+//            public void onClick(View view) {
+//                bundle.putInt("passingTitle", passingTitle);
+//                bundle.putInt("passingHeader", passingHeader);
+//                bundle.putInt("passingContent", passingContent);
+//                bundle.putInt("passingCitation", passingCitation);
+//                bottomSheetPreventionDialog.setArguments(bundle);
+//                bottomSheetPreventionDialog.show(getFragmentManager(), "BottomSheet");
+//            }
+//        });
 
         mPreventive2.setOnClickListener(new View.OnClickListener() {
             Bundle bundle = new Bundle();

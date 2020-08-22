@@ -77,10 +77,15 @@ import com.zub.covid_19.api.ProvincesVietNam.Province;
 import com.zub.covid_19.api.ProvincesVietNam.ProvinceVN;
 import com.zub.covid_19.api.TotalVietNam.DataTotalVietNam;
 import com.zub.covid_19.api.provData.ProvData;
+import com.zub.covid_19.api.specData.Data;
+import com.zub.covid_19.api.specData.SpecDataVN;
+import com.zub.covid_19.api.specData.SumMapVNProvinces;
+import com.zub.covid_19.api.specData.VnPatientCase;
 import com.zub.covid_19.ui.BottomSheetMapsDialog;
 import com.zub.covid_19.util.LoadLocale;
 import com.zub.covid_19.vm.ProvDataVNViewModel;
 import com.zub.covid_19.vm.ProvDataViewModel;
+import com.zub.covid_19.vm.SpecDataViewModelVN;
 import com.zub.covid_19.vm.TotalVietNamViewModel;
 
 import org.w3c.dom.Text;
@@ -90,8 +95,10 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 public class MapsFragment extends Fragment implements
@@ -104,7 +111,9 @@ public class MapsFragment extends Fragment implements
 
     private DataProvinceVN provListData = new DataProvinceVN();
 
-    private DataProvinceVN filteredList = new DataProvinceVN();;
+    private DataProvinceVN filteredList = new DataProvinceVN();
+
+    private Data filteredListVN = new Data();
 
     private GoogleMap googleMap;
 
@@ -119,14 +128,109 @@ public class MapsFragment extends Fragment implements
     private LinearLayout mProvDetailedCaseButton;
 
     private Marker marker;
-
+    private List<VnPatientCase> list_vnPatientCase;
+    private Map<String, SumMapVNProvinces> listALL = new HashMap<>();
     private int arraySizeBefore;
-    double totalConfirm = 1;
+    float totalConfirm = 1;
     @SuppressLint("ClickableViewAccessibility")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
+
+
+        SpecDataViewModelVN specDataViewModelVN;
+        specDataViewModelVN = ViewModelProviders.of(this).get(SpecDataViewModelVN.class);
+        specDataViewModelVN.init();
+        specDataViewModelVN.getLoading().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (aBoolean) {
+                    //showSpecDataLoading();
+                } else {
+                    //hideSpecDataLoading();
+                }
+            }
+        });
+        specDataViewModelVN.getSpecData().observe(this, new Observer<SpecDataVN>() {
+            @Override
+            public void onChanged(SpecDataVN specDataVN) {
+                //showAgeGraphVN(specDataVN);
+                //showSexGraphVN(specDataVN);
+                //showUpdatedDateVN(specDataVN);
+
+                for(VnPatientCase row :specDataVN.getData().getVnPatientCases()){
+                    String location = row.getLocation();
+                    String gender = row.getGender();
+                    int age = Integer.parseInt(row.getAge());
+                    SumMapVNProvinces item = new SumMapVNProvinces();
+                    if(listALL.get(location)==null)
+                    {
+                        if(gender.equals("Nam"))
+                        {
+                            item.setNam(1);
+                        }
+                        else
+                        {
+                            item.setNu(1);
+                        }
+
+                        if(age<=18){
+                            item.setType_1(1);
+                        }else if(age>19 && age<=39){
+                            item.setType_2(1);
+                        }else if(age>39 && age<=59){
+                            item.setType_3(1);
+                        }else{
+                            item.setType_4(1);
+                        }
+
+                        listALL.put(location,item);
+
+
+                    }
+                    else
+                    {
+                        SumMapVNProvinces update = listALL.get(location);
+                        if(gender.equals("Nam"))
+                        {
+                            update.setNam(update.getNam()+1);
+                        }
+                        else
+                        {
+                            update.setNu(update.getNu()+1);
+                        }
+
+                        if(age<=18){
+                            update.setType_1(update.getType_1()+1);
+                        }else if(age>19 && age<=39){
+                            update.setType_2(update.getType_2()+1);
+                        }else if(age>39 && age<=59){
+                            update.setType_3(update.getType_3()+1);
+                        }else{
+                            update.setType_4(update.getType_4()+1);
+                        }
+
+
+
+                    }
+
+
+
+                }
+
+                Log.d("test",listALL.get("Hồ Chí Minh").getNam()+"");
+
+            }
+        });
+
+
+
+
+
+
+
+
 
         // ========= Total Data VietNam FETCHING
         TotalVietNamViewModel totalVietNamViewModel;
@@ -143,7 +247,7 @@ public class MapsFragment extends Fragment implements
             @Override
             public void onChanged(DataTotalVietNam dataTotalVietNam) {
                 String confirm  =dataTotalVietNam.getData().getTotalVietNam().getConfirmed().replace(".","");
-                totalConfirm = Double.parseDouble(confirm);
+                totalConfirm = Float.parseFloat(confirm);
             }
 
 
@@ -283,6 +387,8 @@ public class MapsFragment extends Fragment implements
 
         //PROV DATA FETCHING
 
+
+
         ProvDataVNViewModel provDataViewModel;
 
         provDataViewModel = ViewModelProviders.of(this).get(ProvDataVNViewModel.class);
@@ -420,16 +526,16 @@ public class MapsFragment extends Fragment implements
             mProvCase = view.findViewById(R.id.info_window_prov_case);
             mProvDeath = view.findViewById(R.id.info_window_prov_death);
             mProvCured = view.findViewById(R.id.info_window_prov_cured);
-            mProvTreated = view.findViewById(R.id.info_window_prov_treated);
+            //mProvTreated = view.findViewById(R.id.info_window_prov_treated);
             mProvPercentage = view.findViewById(R.id.info_window_prov_percentage);
             mProvMale = view.findViewById(R.id.info_window_prov_male);
             mProvFemale = view.findViewById(R.id.info_window_prov_female);
             mProvBaby = view.findViewById(R.id.info_window_prov_age_baby);
             mProvTeen = view.findViewById(R.id.info_window_prov_age_teen);
-            mProvMan = view.findViewById(R.id.info_window_prov_age_man);
+           // mProvMan = view.findViewById(R.id.info_window_prov_age_man);
             mProvAdult = view.findViewById(R.id.info_window_prov_age_adult);
             mProvOld = view.findViewById(R.id.info_window_prov_age_old);
-            mProvGrandParents = view.findViewById(R.id.info_window_prov_age_grandparent);
+            //mProvGrandParents = view.findViewById(R.id.info_window_prov_age_grandparent);
 
             //remove the "m" from getId() to returning integer
 
@@ -463,18 +569,19 @@ public class MapsFragment extends Fragment implements
 
 
 
-            Double percent = Double.parseDouble(provListData.getConfirmed()) * 100.0f / totalConfirm;
+            float percent = Float.parseFloat(provListData.getConfirmed()) * 100.0f / totalConfirm;
+            float scale = (float) Math.pow(10, 2);
+            float per = Math.round(percent * scale) / scale;
+            mProvPercentage.setText(String.format("%.2f", per));
+            mProvMale.setText(numberSeparator(listALL.get(provListData.getProvinceName()).getNam()));
+            mProvFemale.setText(numberSeparator(listALL.get(provListData.getProvinceName()).getNu()));
 
-            mProvPercentage.setText(percent.toString().substring(0,3));
-//            mProvMale.setText(numberSeparator(provListData.getProvDataSexLists().get(0).getDocCount()));
-//            mProvFemale.setText(numberSeparator(provListData.getProvDataSexLists().get(1).getDocCount()));
-
-//            mProvBaby.setText(numberSeparator(ageList.get(0)));
-//            mProvTeen.setText(numberSeparator(ageList.get(1)));
-//            mProvMan.setText(numberSeparator(ageList.get(2)));
-//            mProvAdult.setText(numberSeparator(ageList.get(3)));
-//            mProvOld.setText(numberSeparator(ageList.get(4)));
-//            mProvGrandParents.setText(numberSeparator(ageList.get(5)));
+            mProvBaby.setText(numberSeparator(listALL.get(provListData.getProvinceName()).getType_1()));
+            mProvTeen.setText(numberSeparator(listALL.get(provListData.getProvinceName()).getType_2()));
+            mProvOld.setText(numberSeparator(listALL.get(provListData.getProvinceName()).getType_4()));
+            mProvAdult.setText(numberSeparator(listALL.get(provListData.getProvinceName()).getType_3()));
+//           setText(numberSeparator(listALL.get(provListData.getProvinceName()).getType_3()));
+            //mProvGrandParents.setText(numberSeparator(ageList.get(5)));
 
             return view;
         }

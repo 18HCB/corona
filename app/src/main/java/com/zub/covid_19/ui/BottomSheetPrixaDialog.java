@@ -43,8 +43,8 @@ public class BottomSheetPrixaDialog extends BottomSheetMapsDialog {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("passingURL", "https://prixa.ai/corona");
-                intent.putExtra("passingTitle", "Prixa.ai");
+                intent.putExtra("passingURL", "https://bluezone.gov.vn/");
+                intent.putExtra("passingTitle", "Tải Bluezone để phòng chống COVID hiệu quả");
                 getActivity().startActivity(intent);
                 dismiss();
             }

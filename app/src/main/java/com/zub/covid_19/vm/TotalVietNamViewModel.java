@@ -5,8 +5,6 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.zub.covid_19.api.TotalVietNam.DataTotalVietNam;
-import com.zub.covid_19.api.regulerData.RegulerData;
-import com.zub.covid_19.repo.RegulerDataRepository;
 import com.zub.covid_19.repo.TotalVietNamRepository;
 
 public class TotalVietNamViewModel extends ViewModel {

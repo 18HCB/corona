@@ -5,8 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegulerDataFetch {
 
-    private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://data.covid19.go.id/")
+
+    public static Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://10.0.2.2:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 

@@ -247,71 +247,71 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="fill_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/rounded_stats"
-                            android:backgroundTint="@color/themeBlue"
-                            android:orientation="vertical"
-                            tools:targetApi="lollipop">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="fill_parent"-->
+<!--                            android:layout_marginLeft="10dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:background="@drawable/rounded_stats"-->
+<!--                            android:backgroundTint="@color/themeBlue"-->
+<!--                            android:orientation="vertical"-->
+<!--                            tools:targetApi="lollipop">-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="8dp"
-                                android:text="@string/stat_monitoring"
-                                android:textColor="@color/white"
-                                android:textSize="15sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginTop="8dp"-->
+<!--                                android:text="@string/stat_monitoring"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="15sp" />-->
 
-                            <TextView
-                                android:id="@+id/stat_kasus_odp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="8dp"
-                                android:text="@string/null_text"
-                                android:textColor="@color/white"
-                                android:textSize="23sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:id="@+id/stat_kasus_odp"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginTop="20dp"-->
+<!--                                android:layout_marginBottom="8dp"-->
+<!--                                android:text="@string/null_text"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="23sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="fill_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/rounded_stats"
-                            android:backgroundTint="@color/themePurple"
-                            android:orientation="vertical"
-                            tools:targetApi="lollipop">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="fill_parent"-->
+<!--                            android:layout_marginLeft="10dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:background="@drawable/rounded_stats"-->
+<!--                            android:backgroundTint="@color/themePurple"-->
+<!--                            android:orientation="vertical"-->
+<!--                            tools:targetApi="lollipop">-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="8dp"
-                                android:text="@string/stat_patient"
-                                android:textColor="@color/white"
-                                android:textSize="15sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginTop="8dp"-->
+<!--                                android:text="@string/stat_patient"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="15sp" />-->
 
-                            <TextView
-                                android:id="@+id/stat_kasus_pdp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="8dp"
-                                android:text="@string/null_text"
-                                android:textColor="@color/white"
-                                android:textSize="23sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:id="@+id/stat_kasus_pdp"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginTop="20dp"-->
+<!--                                android:layout_marginBottom="8dp"-->
+<!--                                android:text="@string/null_text"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="23sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
                     </TableRow>
 
@@ -369,16 +369,16 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/stat_updated_cases"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="30dp"-->
+<!--                        android:layout_marginTop="18dp"-->
+<!--                        android:layout_marginBottom="5dp"-->
+<!--                        android:text="@string/stat_updated_cases"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold" />-->
 
                     <com.facebook.shimmer.ShimmerFrameLayout
                         android:id="@+id/stat_shimmer_new_case_graph"
@@ -401,12 +401,12 @@
 
                     </com.facebook.shimmer.ShimmerFrameLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/stat_new_case_graph"
-                        android:layout_width="fill_parent"
-                        android:layout_height="180dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" />
+<!--                    <com.github.mikephil.charting.charts.LineChart-->
+<!--                        android:id="@+id/stat_new_case_graph"-->
+<!--                        android:layout_width="fill_parent"-->
+<!--                        android:layout_height="180dp"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginRight="10dp" />-->
 
                     <TextView
                         android:layout_width="wrap_content"
