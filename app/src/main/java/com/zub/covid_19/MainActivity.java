@@ -85,9 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_maps:
                             fragment = new MapsFragment();
                             break;
-                        case R.id.nav_info:
-                            fragment = new InfoFragment();
-                            break;
+
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 

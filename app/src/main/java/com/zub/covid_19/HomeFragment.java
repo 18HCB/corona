@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
     @BindView(id.home_do_test_button)
     RelativeLayout mDoTest;
    // @BindView(id.home_country_button) LinearLayout mCountry;
-  //  @BindView(id.home_preventive_1) LinearLayout mPreventive1;
+    @BindView(id.home_preventive_1) LinearLayout mPreventive1;
     @BindView(id.home_preventive_2)
     LinearLayout mPreventive2;
     @BindView(id.home_preventive_3)
@@ -166,22 +166,22 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
-//        mPreventive1.setOnClickListener(new View.OnClickListener() {
-//            Bundle bundle = new Bundle();
-//            Integer passingTitle = string.home_preventive1;
-//            Integer passingHeader = drawable.social_distancing_header;
-//            Integer passingContent = string.social_distancing;
-//            Integer passingCitation = string.social_distancing_citation;
-//            @Override
-//            public void onClick(View view) {
-//                bundle.putInt("passingTitle", passingTitle);
-//                bundle.putInt("passingHeader", passingHeader);
-//                bundle.putInt("passingContent", passingContent);
-//                bundle.putInt("passingCitation", passingCitation);
-//                bottomSheetPreventionDialog.setArguments(bundle);
-//                bottomSheetPreventionDialog.show(getFragmentManager(), "BottomSheet");
-//            }
-//        });
+        mPreventive1.setOnClickListener(new View.OnClickListener() {
+            Bundle bundle = new Bundle();
+            Integer passingTitle = string.home_preventive1;
+            Integer passingHeader = drawable.social_distancing_header;
+            Integer passingContent = string.social_distancing;
+            Integer passingCitation = string.social_distancing_citation;
+            @Override
+            public void onClick(View view) {
+                bundle.putInt("passingTitle", passingTitle);
+                bundle.putInt("passingHeader", passingHeader);
+                bundle.putInt("passingContent", passingContent);
+                bundle.putInt("passingCitation", passingCitation);
+                bottomSheetPreventionDialog.setArguments(bundle);
+                bottomSheetPreventionDialog.show(getFragmentManager(), "BottomSheet");
+            }
+        });
 
         mPreventive2.setOnClickListener(new View.OnClickListener() {
             Bundle bundle = new Bundle();
@@ -366,7 +366,7 @@ public class HomeFragment extends Fragment {
 
         // undo all highlights
         mGlobalDataPieChart.highlightValues(null);
-        mGlobalDataPieChart.setCenterText("Update:\n" + globalData.getLastUpdate()
+        mGlobalDataPieChart.setCenterText("Cập nhật:\n" + globalData.getLastUpdate()
                 .replace("T","\n")
                 .replace(".000Z",""));
 

@@ -1,121 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Covid-19 by Nhóm 2</string>
-    <string name="loading_text" tools:ignore="TypographyEllipsis">Loading...</string>
-    <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Loading the page...</string>
-    <string name="prixa_title">You\'ll be redirected to</string>
-    <string name="prixa_desc">The artificial intelligence system that Prixa.ai provides will detect COVID-19 symptoms that you may have.</string>
-    <string name="prixa_footer1">All rights are fully delegated to Prixa.ai</string>
-    <string name="home_header">Are you felling sick?</string>
-    <string name="home_desc">If you feel sick with any of covid-19 symptoms, please call immediately for help.</string>
-    <string name="home_call">Call Now</string>
-    <string name="home_news_header">News111</string>
-    <string name="home_preventive_header">Prevention</string>
-    <string name="home_preventive1">Avoid Close Contact</string>
-    <string name="home_preventive2">Clean Your Hand Often</string>
-    <string name="home_preventive3">Wear a Face Mask</string>
-    <string name="home_test_header">Do your own test!</string>
-    <string name="home_test_desc">Follow the instruction to do your own test</string>
-    <string name="info_title">Information</string>
-    <string name="info_desc2">Developed by</string>
-    <string name="info_acknowledgement">Acknowledgement</string>
-    <string name="info_ack1">Data Information from data.covid19.go.id</string>
-    <string name="info_ack2">UI design from simantOo for Nickelfox (free use)</string>
-    <string name="info_ack3">Image Illustration from freepik.com (free use)</string>
-    <string name="info_term">Term and Condition</string>
-    <string name="maps_title">Case per Province</string>
-    <string name="stat_title">Statistic</string>
-    <string name="stat_subtitle">Cases Summary</string>
-    <string name="stat_positive">Positive</string>
-    <string name="stat_death">Death</string>
-    <string name="stat_cured">Cured</string>
-    <string name="stat_monitoring">Monitoring</string>
-    <string name="stat_patient">Patient</string>
-    <string name="stat_cumulative_cases">Cumulative Cases</string>
-    <string name="stat_updated_cases">Updated Cases</string>
-    <string name="stat_condition_positive_cases">Condition Causes Positive Cases</string>
-    <string name="stat_positive_symptom_cases">Positive Cases Symptom</string>
-    <string name="stat_age_group_cases">Age Group</string>
-    <string name="stat_sex_group_cases">Sex Group</string>
-    <string name="info_window_prov_cases">"Cases: "</string>
-    <string name="info_window_prov_death">"Death: "</string>
-    <string name="info_window_prov_cured">"Cured: "</string>
-    <string name="info_window_prov_treated">"Treated: "</string>
-    <string name="info_window_prov_subtitle">of all Indonesia cases</string>
-    <string name="info_window_prov_subtitle2">"Cases Based on: "</string>
-    <string name="info_window_prov_sex">"Sex: "</string>
-    <string name="info_window_prov_age">"Age: "</string>
-    <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Search Province...</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_stats">Statistic</string>
-    <string name="menu_maps">Maps</string>
-    <string name="menu_info">Information</string>
+    <string name="app_name">Covid-19 của Nhóm 4</string>
+    <string name="loading_text" tools:ignore="TypographyEllipsis">Đang tải...</string>
+    <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Đang tải trang...</string>
+    <string name="prixa_title">Bạn đang chuyển hướng đến</string>
+    <string name="prixa_desc">Hãy cài ứng dụng bluezone để phòng tránh COVID-19</string>
+    <string name="prixa_footer1">Bản quyền thuộc về Prixa.ai</string>
+    <string name="home_header">Bạn cảm thấy không khỏe trong người ?</string>
+    <string name="home_desc">Nếu bạn có các triệu chứng của bệnh COVID-19, vui lòng gọi đến cac trung tâm y tế để được giúp đỡ.</string>
+    <string name="home_call">Gọi ngay</string>
+    <string name="home_news_header">Tin tức mới cập nhật</string>
+    <string name="home_preventive_header">Cách phòng ngừa</string>
+    <string name="home_preventive1">Tránh tiếp xúc gần</string>
+    <string name="home_preventive2">Rửa tay thường xuyên</string>
+    <string name="home_preventive3">Đeo khẩu trang nơi công cộng</string>
+    <string name="home_test_header">Tự kiểm tra bản thâm!</string>
+    <string name="home_test_desc">Làm theo hướng dẫn để thực hiện tự kiểm tra bản thân</string>
+    <string name="info_title">Thông tin</string>
+    <string name="info_desc2">Được phát triển bởi</string>
+    <string name="info_acknowledgement">Thông tin công nhận</string>
+    <string name="info_ack1">Dữ liệu được lấy từ trang https://corona.kompa.ai/</string>
+    <string name="info_ack2">Giao diện được thiết kế bởi simantOo for Nickelfox (miễn phí)</string>
+    <string name="info_ack3">Hình ảnh minh họa từ freepik.com (miễn phí)</string>
+    <string name="info_term">Điều khoản và điều kiện</string>
+    <string name="maps_title">Số ca tại mỗi tỉnh/thành phố</string>
+    <string name="stat_title">Thống kê</string>
+    <string name="stat_subtitle">Tổng kết các trường hợp</string>
+    <string name="stat_positive">Dương tính</string>
+    <string name="stat_death">Tử vong</string>
+    <string name="stat_cured">Khỏi bệnh</string>
+    <string name="stat_monitoring">Thống kê giám sát</string>
+    <string name="stat_patient">Thống kê số bệnh nhân</string>
+    <string name="stat_cumulative_cases">Tổng hợp các ca mắc</string>
+    <string name="stat_updated_cases">Các ca được cập nhật</string>
+    <string name="stat_condition_positive_cases">Nguyên nhân dẫn đến nhiễm bênh</string>
+    <string name="stat_positive_symptom_cases">Triệu chứng khi nhiễm bệnh</string>
+    <string name="stat_age_group_cases">Nhóm tuổi</string>
+    <string name="stat_sex_group_cases">Nhóm giới tính</string>
+    <string name="info_window_prov_cases">"Số lượng trường hợp: "</string>
+    <string name="info_window_prov_death">"Số người chết: "</string>
+    <string name="info_window_prov_cured">"Số người nhiễm: "</string>
+    <string name="info_window_prov_treated">"Số người khỏi: "</string>
+    <string name="info_window_prov_subtitle">Các trường hợp ở Indonesia</string>
+    <string name="info_window_prov_subtitle2">"Các trường hợp được dựa trên: "</string>
+    <string name="info_window_prov_sex">"Giới tính: "</string>
+    <string name="info_window_prov_age">"Tuổi: "</string>
+    <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Tìm kiếm tỉnh/thành phố...</string>
+    <string name="menu_home">Trang chủ</string>
+    <string name="menu_stats">Thống kê</string>
+    <string name="menu_maps">Bản đồ</string>
+    <string name="menu_info">Thông tin</string>
 
     <!--    PREVENTIVE STRING ASSET-->
     <string name="about">
-        This application is not intended for anyone who makes this application as a benchmark against
-        covid-19 information although all information in this application is downloaded from the Indonesia
-        official covid-19 government website (covid19.go.id). But this application is intended for software developer
-        enthusiast to explore our potential in developing an application which in this case is intended for a personal portfolio.
-        If the user feels disadvantaged when using this application, all full responsibility is yours.
-        But if you feels benefited, you can give some positive feedback on the contact button above. Surakarta, 2020
+        Ứng dụng này không dành cho những người lấy thông tin tại đây làm chuẩn, mặc dù các thông tin này đều được lấy từ
+        trang https://corona.kompa.ai. Mục đích của ứng dụng này là dành cho các lập trình viên khám phá khả năng tiềm ẩm trong việc
+        phát triển thành 1 ứng dụng cá nhân. Nếu người dùng không hài lòng khi sử dụng ứng dụng thì mọi trách nhiệm hoàn toàn thuộc về bạn.
+        Nhưng nếu bạn cảm thấy đây là ứng dụng tốt thì bạn có thể gửi phản hồi cho chúng tôi.
     </string>
     <string name="social_distancing">
-        With social distancing, we reduce contact with each other to prevent COVID-19 spread. Conversely, if you turn out
-        infected but not aware of it, so keeping away from the crowd will really help prevent the spread.\n\n
-        So, if someone infected with this virus then accidentally coughs or sneezes without closing his mouth,
-        then the droplet will fall on a nearby surface. When there are other people who are not infected holding
-        the surface, then touches the mouth, nose or eyes without washing hands first, he has high infected risk.
-        \n\nThis is what makes the transmission of this disease rise dramatically in a short time.
-        Many people are not aware that they are infected, then go to various locations to meet friends
-        and relatives. As a result, the spread of this virus is increasingly widespread.
+        Trong thời gian giãn cách xã hội, chúng ta ít tiếp xúc với nhau để ngăn ngừa virus COVID-19 lây lan.
+        Ngược lại, nếu bạn nhiễm bệnh và không hề hay biết, hãy tránh đi đến những nơi đông người để ngăn ngừa virus COVID-19 lây lan.
+        Nếu ai đó nhiễm virus COVID-19 lại vô tính ho hoặc hắt xì mà không che miệng thì giọt bắn sẽ rơi trên bề mặt tiếp xúc gần đó.
+        Khi người không bị nhiễm bệnh chạm lên bề mặt đó rồi chạm vào mắt, mũi, miệng mà không rửa tay trước sẽ có nguy cơ nhiễm bệnh rất cao.
+        Đây là nguyên nhân dẫn đến việc lây lan nhanh trong thời gian ngắn. Nhiều người không biết họ đã bị nhiểm bệnh, lại đi đến những nơi đông người
+        dẫn đến việc lây lan nhanh trong cộng đồng
     </string>
     <string name="social_distancing_citation">
-        From: https://lifestyle.kompas.com/read/2020/03/16/143303720/social-distancing-efektif-cegah-penyebaran-corona-bagaimana-caranya?page=all
+        Nguồn: https://lifestyle.kompas.com/read/2020/03/16/143303720/social-distancing-efektif-cegah-penyebaran-corona-bagaimana-caranya?page=all
     </string>
 
     <string name="wash_hand">
-        World Health Organization (WHO) recommends that everyone always wash their hands
-        in order to prevent the spread of the corona virus COVID-19. Clean your hands regularly and thoroughly with soap
-        and water or alcohol-based liquids.\n\nWash your hands with soap and water or use cleaning fluid
-        alcohol-based can kill viruses that may be in your hands. Washing hands can get you
-        stay healthy and prevent the spread of respiratory infections and diarrhea from one person to another.\n\nGerms can
-        spread from other people or surfaces when you: \ n1. Touch your eyes, nose and mouth with hands
-        not washed.\n2. Eat or prepare food and drinks with your hands not washed.\n3. Touch the surface
-        or contaminated object.\n4. Flinches, coughs, or sneezes on the hands and then touches the hands
-        other people or objects.
+        Tổ chức y tế thế giới (WHO) khuyến cáo mọi người luôn luôn rửa tay thật sạch để ngăn ngừa lây nhiễm virus COVID-19.
+        Rửa tay thường xuyên bằng xà phòng với nước sạch hoặc dung dịch rửa tay để tiêu diệt virus trên bản tay.
+        Rửa tay giúp giữ gìn sạch sẽ, tránh các bệnh truyền nhiễm từ người sang người. Vi khẩn có thể lây lan khi bạn: \ n1. Chạm tay vào mắt mũi miệng
+        khi chưa rửa tay sạch.\n2. Dùng bữa khi chưa rửa tay sạch.\n3. Tiếp xúc với các bề mặt bị nhiễm bệnh.\n4. Ho, hắt hơi lên tay rồi chạm vào người khác hoặc các bề mặt
     </string>
     <string name="wash_hand_citation">
-        From: https://tirto.id/cara-cuci-tangan-dengan-7-langkah-menurut-who-untuk-cegah-corona-eLyQ
+        Nguồn: https://tirto.id/cara-cuci-tangan-dengan-7-langkah-menurut-who-untuk-cegah-corona-eLyQ
     </string>
 
     <string name="wear_mask">
-        Research from the University of Hong Kong and the University of Maryland found that masks
-        simple blocking 100 percent of droplets and aerosols. The Guardian writes, countries that are
-        has required their citizen wearing a face mask from the beginning shows a lower mortality rate than
-        countries that don\'t enforce it.\n\nHowever, the big challenge is using masks only
-        will work if most people use it. Analysis from the Food and Drug Administration (FDA)
-        about the flu estimates, if 50 percent of the population uses masks, transmission of the virus can be reduced
-        by half. Meanwhile, if 80 percent of the population uses masks, the virus can be lost.\n\nBecause
-        that, various regions are currently adopting laws that require the use of masks in crowded places
-        such as public transportation and shops.
+        Nghiên cứu từ trường đại học Hong Kong and trường đại học Maryland cho thấy khẩu trang ngăn 100% giọt bắn.
+        Bài báo Guardian viế rằng, những quốc gia bắt buộc công đeo khẩu trang ngay từ sớm cho thấy số lượng người mắc bệnh
+        ít hơn so với các quốc gia không bắt buộc \n\nTuy nhiên, việc đeo khẩu trang chỉ hiệu quả khi tất cả mọi người đều đeo.
+        Phân tích từ bộ ẩm thực và y tế (FDA) về bệnh cúm, nếu 50% dân số đeo khẩu trang thì việc lây lan sẽ giảm 1 nửa.
+        Trong khi, nếu 80% dân số đeo khẩu trang thì virus sẽ biến mất.\n\nVì thế, nhiều quốc gia đã áp đặt luật yêu cầu người dân phải đeo khẩu trang khi đến nơi công cộng
     </string>
     <string name="wear_mask_citation">
-        From: https://www.kompas.com/tren/read/2020/04/08/073100465/pandemi-virus-corona-dan-alasan-kenapa-kini-kita-semua-harus-pakai-masker-?page=all#page4
+        Nguồn: https://www.kompas.com/tren/read/2020/04/08/073100465/pandemi-virus-corona-dan-alasan-kenapa-kini-kita-semua-harus-pakai-masker-?page=all#page4
     </string>
-    <string name="info_lang_title">Language</string>
-    <string name="home_global_data">Global Cases</string>
-    <string name="home_confirmed">Confirmed</string>
-    <string name="home_death">Death</string>
-    <string name="home_recovered">Recovered</string>
-    <string name="home_donate_header">Donate now!</string>
-    <string name="home_donate_desc">We need your help to help those who affected by this pandemic</string>
-    <string name="donate_desc">Help those who affected COVID-19 pandemic with a donation through kitabisa.com platform</string>
-    <string name="donate_footer1">All rights are fully delegated to KitaBisa.com</string>
-    <string name="info_ack5">Health test based on Artificial Intelligent by prixa.ai</string>
-    <string name="info_ack4">News data provided by newsapi.org</string>
-    <string name="info_ack6">Donation platform from kitabisa.com</string>
-    <string name="info_ack7">Global data COVID-19 provided by covid19.mathdro.id</string>
-    <string name="info_ack8">Medical frontliner animation from Paulo Bañas on lottiefiles.com</string>
+    <string name="info_lang_title">Ngôn ngữ</string>
+    <string name="home_global_data">Các ca nhiễm toàn cầu</string>
+    <string name="home_confirmed">Các ca xác nhận</string>
+    <string name="home_death">Các ca tử vong</string>
+    <string name="home_recovered">Các ca hồi phục</string>
+    <string name="home_donate_header">Quyên góp</string>
+    <string name="home_donate_desc">Chúng tôi cần sự giúp đỡ của các bạn để chống lại đại dịch này</string>
+    <string name="donate_desc">Giúp đở nhửng người nhiễm virus COVID-19</string>
+    <string name="donate_footer1">Bản quyền thuộc về KitaBisa.com</string>
+    <string name="info_ack5">Kiểm tra sức khỏe dựa trên trí tuệ nhân tạo của prixa.ai</string>
+    <string name="info_ack4">Dữ liệu mới được cung cấp bởi newsapi.org</string>
+    <string name="info_ack6">Trang quyên góp </string>
+    <string name="info_ack7">Dữ liệu mới về số ca nhiễm virus COVID-19 được cung cấp bởi covid19.mathdro.id</string>
+    <string name="info_ack8">Hình ảnh về các phòng chống dịch được cung cấp bởi Paulo Bañas on lottiefiles.com</string>
 
 </resources>

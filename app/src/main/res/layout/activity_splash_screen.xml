@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-40dp"
             android:gravity="center"
-            android:text="Thanks to all the healthcare workers on the front line who are risking their health caring for saving us\n♥👏"
+            android:text="Lời cảm ơn đến các nhân viên y tế tuyến đầu đã hy sinh tất cả để cứu chúng tôi\n♥👏"
             android:textColor="@color/gray700"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />

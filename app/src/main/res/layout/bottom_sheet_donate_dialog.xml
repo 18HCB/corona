@@ -32,13 +32,6 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="6dp"
-        android:src="@drawable/kitabisa_logo"
-        tools:ignore="ContentDescription" />
-
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -47,24 +40,5 @@
         android:text="@string/donate_desc"
         android:textColor="@color/black"
         android:textSize="15sp" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="@string/donate_footer1"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/donate_footer2"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        tools:ignore="SmallSp" />
 
 </LinearLayout>
